@@ -1,0 +1,24 @@
+{% extends "layout_base/base.html" %}
+{% block conteudo %}
+
+<div class="container">
+  <div class="row mg-20">
+    <div class="col-12 col-sm-8">
+    <img src="{{ url_for('static', filename='img/'+ restaurante.get_img())}}" class="img-big">
+    </div><!--end col-sm-8-->
+    <div class="col-12 col-sm-4">
+
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">  <h3>{{ restaurante.get_nome() }}</h3> </li>
+      <li  class="list-group-item"> <span> Rua:  </span>{{ enderecos.get_rua() }}</li>
+      <li  class="list-group-item"> <span> Bairro:  </span> {{ enderecos.get_bairro() }} <span style="margin-left:50px;"> N°:  </span>{{ enderecos.get_numero() }}</li></li>
+      <li  class="list-group-item"> <span> Cidade:  </span>{{ enderecos.get_cidade() }}</li>
+      <li  class="list-group-item"> <span> Chefe:</span>{{ restaurante.get_chefe() }} </li>
+      <li  class="list-group-item"> <span> Palavra do Chefe:  </span>{{ restaurante.get_comentario() }}  </li>
+      <li  class="list-group-item"> <span> Horario de Funcionamento:</span> {{ restaurante.get_horario() }}  </li>
+      <li  class="list-group-item"> <a href="{{url_for('home')}}">Voltar </a></il>
+    </ul>
+    </div><!--end col-sm-4-->
+  </div><!--end row-->
+</div><!--end container-->
+{% endblock %}

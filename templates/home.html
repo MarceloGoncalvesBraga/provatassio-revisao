@@ -1,0 +1,18 @@
+
+{% extends "layout_base/base.html" %}
+{% block conteudo %}
+  <div class="container">
+    <div class="row">
+     
+            {% for restaurante in restaurantes %}
+            <div class="col-12 col-sm-6">
+            <a href="{{url_for('restaurante', id=restaurante.get_id()) }}">
+                <h1 class="texto-img">{{ restaurante.get_nome() }}</h1>
+              <img src="{{ url_for('static', filename='img/'+restaurante.get_img())}}" alt="{{restaurante.get_nome()}}" class="img-lista">
+            </a>
+          </div><!--end col-12-->
+            {% endfor %}
+
+    </div><!--end row-->
+  </div><!--end container-->
+{% endblock %}
